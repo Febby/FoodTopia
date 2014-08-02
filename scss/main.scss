@@ -234,6 +234,30 @@ Main components
 	}
 }
 
+.search-form{
+	margin:1em auto;
+	text-align:center;
+	input[type="search"]{
+  height: 30px;
+  width:40%;
+  border: none;
+  border-bottom: 2px solid $main-text;
+  background-color: transparent;
+ 
+  
+  &:hover {
+   
+  }
+  
+  &:focus {
+    outline: none;
+  }
+}
+}
+
+input[type="submit"]{
+	@include button;
+}
 /* -------------------------------- 
 
 xgallery 
@@ -278,6 +302,7 @@ xgallery
 		box-shadow: 0 1px 3px rgba(#000, .1);
 
 		img {
+			transition: 1s all;
 			display: block;
 			width: 100%;
 			@include border-radius;
