@@ -13,12 +13,6 @@ function displayImages(obj) {
     $('ul.cd-gallery').html(str);
 }
 
-function checkValue() {
-    if (!$.trim(query)) {
-        alert("error");
-        return false;
-    }
-}
 
 //search function
 
@@ -28,7 +22,7 @@ $('form').on('submit', function(event) {
     var query = $('#search').val();
 
     $.ajax({
-        url: url.replace('{*}', query) + "?callback=?",
+        url: url.replace('{*}', $.trim(query)) + "?callback=?",
         type: "GET",
         dataType: 'json',
         data: {
@@ -36,9 +30,12 @@ $('form').on('submit', function(event) {
         },
         beforeSend: function() {
             if (!$.trim(query)) {
-                alert("Whoops! Please fill in the search form");
+                $("#search").addClass('animated swing error')
                 return false;
             } else {
+                if ($("#search").hasClass('animated swing error')) {
+                    $("#search").removeClass('animated swing error');
+                };
                 $('ul.cd-gallery').html("<div class='loader1'><i></i><i></i></div>")
             }
 
