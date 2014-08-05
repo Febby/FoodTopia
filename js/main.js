@@ -1,4 +1,6 @@
-//Init variable
+// Avoid `console` errors in browsers that lack a console.
+(function() {
+  //Init variable
 var clientID = "0bb1c26ce5d54ede9f37467517b9286a";
 var url = "https://api.instagram.com/v1/tags/{*}/media/recent";
 
@@ -60,3 +62,6 @@ $('form').on('submit', function(event) {
         });
 
 });
+
+}());
+
