@@ -1,4 +1,4 @@
-FoodTopia
+InstaTopia
 =========
 
-Find your foodie mates here!
+An AJAX app that allows user to search everything from Instagram.
